@@ -1,0 +1,172 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+
+
+@import "ionic.theme.default";
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+
+
+@font-face {
+    font-family: 'NanumSquareR';
+    src: url(../assets/fonts/nanumSquare/NanumSquareR.eot);
+    src: url(../assets/fonts/nanumSquare/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+        url(../assets/fonts/nanumSquare/NanumSquareR.woff) format('woff'),
+        url(../assets/fonts/nanumSquare/NanumSquareR.ttf) format('truetype');
+} 
+
+@font-face {
+    font-family: 'NanumSquareB';
+    src: url(../assets/fonts/nanumSquare/NanumSquareB.eot);
+    src: url(../assets/fonts/nanumSquare/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+        url(../assets/fonts/nanumSquare/NanumSquareB.woff) format('woff'),
+        url(../assets/fonts/nanumSquare/NanumSquareB.ttf) format('truetype');
+} 
+
+@font-face {
+    font-family: 'NanumSquareEB';
+    src: url(../assets/fonts/nanumSquare/NanumSquareEB.eot);
+    src: url(../assets/fonts/nanumSquare/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+        url(../assets/fonts/nanumSquare/NanumSquareEB.woff) format('woff'),
+        url(../assets/fonts/nanumSquare/NanumSquareEB.ttf) format('truetype');
+} 
+
+@font-face {
+    font-family: 'NanumSquareL';
+    src: url(../assets/fonts/nanumSquare/NanumSquareL.eot);
+    src: url(../assets/fonts/nanumSquare/NanumSquareL.eot?#iefix) format('embedded-opentype'),
+        url(../assets/fonts/nanumSquare/NanumSquareL.woff) format('woff'),
+        url(../assets/fonts/nanumSquare/NanumSquareL.ttf) format('truetype');
+} 
+
+
+
+
+
+@import "roboto";
+@import "noto-sans";
+
+@import '//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css';
+
+
+* {
+    font-family: 'NanumSquareR';
+    /*  background-color: #fff; */
+}
+
+/* 경기리스트 CSS  START */
+.match-info-div {
+  .card-ios,
+  .card-md {
+      border-radius: 8px;
+      background-color: #fff;
+      margin: 5px 10px !important;
+  }
+  ion-card-header {
+      padding: 8px 0px 0px 0px;
+      ion-label {
+          text-align: center;
+      }
+      .card-header-ios,
+      .card-header-md {
+          height: 43px;
+          color: #333;
+          padding: 0px !important;
+      }
+      ion-item {
+          span:first-child {
+              font-size: 14px;
+              font-weight: bold;
+              color: #4a4a4a;
+          }
+          span:last-child {
+              font-size: 10px;
+              font-weight: 500;
+              color: #9b9b9b;
+          }
+      }
+  }
+  ion-card-content {
+      .teamImg {
+          img {
+              width: 56px;
+              height: 56px;
+              margin: 0px auto;
+          }
+      }
+      .teamNm {
+          min-height: 30px;
+          ion-label {
+              font-size: 10px;
+              font-weight: 500;
+              text-align: center;
+              color: #9b9b9b;
+          }
+      }
+      .scoreInfo {
+          padding-top:10px;
+          ion-label {
+              font-size: 32px;
+              font-weight: bold;
+              color: #000000;
+              text-align: center;
+          }
+      }
+      .matchResult {
+          min-height: 25px;
+          ion-label {
+              font-size: 10px;
+              font-weight: 500;
+              text-align: center;
+              color: #ff6678;
+          }
+      }
+  }
+}
+/* 경기리스트 CSS END */

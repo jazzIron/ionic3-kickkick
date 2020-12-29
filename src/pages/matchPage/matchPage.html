@@ -1,0 +1,60 @@
+<ion-content no-padding class="page-header">
+  <ion-grid ion-fixed>
+    <ion-row class="header-title">
+      <ion-item no-lines>
+        <span>Premier League</span><br>
+        <span>프리미어리그</span>
+      </ion-item>
+    </ion-row>
+    <ion-row class="header-tab">
+      <ion-slides spaceBetween="3" centeredSliders="true" slidesPerView="5">
+        <ion-slide *ngFor="let items of tabs" (click)="matchSelect(items)">
+          <ion-item no-lines>{{items}}</ion-item>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-content no-padding class="match-info-div">
+  <ion-grid>
+    <ion-row *ngFor="let items of teamMatchList">
+      <ion-card>
+        <ion-card-header>
+          <ion-item no-padding>
+            <span>{{items.matchDateKor}}</span><br>
+            <span>{{items.matchGround}}</span>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content no-padding>
+          <ion-row>
+            <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding
+              (click)="detailTeam(items.homeTeamId)">
+              <ion-item no-padding class="teamImg"><img src="{{items.homeTeamImg2}}"></ion-item>
+              <ion-item no-padding class="teamNm">{{items.homeShortNm}}</ion-item>
+            </ion-col>
+            <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding>
+              <ion-item no-padding class="scoreInfo" *ngIf="isValidString(items.homeScore); else showEmpty">{{items.homeScore}} : {{items.awayScore}}</ion-item>
+              <ng-template #showEmpty>
+                  <ion-item no-padding class="scoreInfo">VS</ion-item>
+              </ng-template>
+              <ion-item no-padding class="matchResult" *ngIf="items.state == 'after'; else matctStateEmpty">
+                  경기종료
+              </ion-item>
+              <ng-template #matctStateEmpty>
+                  <ion-item no-padding class="matchResult">경기전</ion-item>
+              </ng-template>
+            </ion-col>
+            <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding
+              (click)="detailTeam(items.awayTeamId)">
+              <ion-item no-padding class="teamImg"><img src="{{items.awayTeamImg2}}">
+              </ion-item>
+              <ion-item no-padding class="teamNm">{{items.awayShortNm}}</ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

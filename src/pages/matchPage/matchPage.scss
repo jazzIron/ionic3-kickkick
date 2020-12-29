@@ -1,0 +1,55 @@
+page-matchPage {
+   
+    @include backgroundSet();
+
+    .match-info-div {
+        margin-top: 100px;
+        .scroll-content{
+            margin-top: 25px !important;
+            margin-bottom: 150px !important;
+        }
+    }
+
+    .header-tab {
+        .item-ios, .item-md{
+            padding:0px !important;
+        }
+        ion-slides {
+            height: 44px;
+            ion-item {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                color: #ffffff;
+            }
+        }
+    }
+
+    /* swiper */
+    .swiper-slide,
+    .slide-zoom {
+        text-align: inherit;
+    }
+    .SwipedTabs-indicatorSegment {
+        -webkit-transition: 0.3s all;
+        -moz-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+        position: relative;
+        top: -2px;
+        background-color: #000 !important;
+    }
+    .SwipedTabs-tabs ion-segment-button {
+        border: none !important;
+        color: gray !important;
+        background-color: #fff !important;
+    }
+    .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
+        color: #000 !important;
+    }
+    .SwipedTabs-tabs {
+        border-bottom: solid 1px #e6e6e6 !important;
+    }
+}

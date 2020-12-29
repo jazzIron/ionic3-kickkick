@@ -1,0 +1,9 @@
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding *ngFor="let items of teamList">
+        <img src="{{items.teamBannerImg2}}" (click)="detailTeam(items.teamId)" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

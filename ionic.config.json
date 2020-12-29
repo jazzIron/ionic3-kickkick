@@ -1,0 +1,11 @@
+{
+  "name": "kickkick",
+  "integrations": {},
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "",
+      "proxyUrl": "http://localhost:8080"
+    }
+  ]
+}

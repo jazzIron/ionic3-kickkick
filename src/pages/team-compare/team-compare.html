@@ -1,0 +1,324 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>다음경기 정보</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid class="compare-div">
+
+    <ion-row class="teamInfo-div" *ngFor="let items of nextMatchTeamInfo">
+
+<!--         <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+            <div class="matchRound-div">{{items.matchRound}}R</div>
+        </ion-col>
+
+        <ion-col col-10 col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding>
+            <div class="matchData-div">{{items.matchDate}}</div>
+            <div class="matchGround-div">{{items.homeGround}}</div>
+        </ion-col> -->
+
+        <ion-col ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="teamInfo hometeam-div" [ngStyle]="{'background-color': items.homeColor}">
+            <div><img src="{{items.teamImgH}}" /></div>
+            <div class="teamNm">{{items.teamshortNmH}}</div>
+            <div class="avgResult">{{items.homeRank}}</div>
+        </ion-col>
+
+        <ion-col ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="teamInfo awayteam-div" [ngStyle]="{'background-color': items.awayColor}">
+            <div><img src="{{items.teamImgA}}" /></div>
+            <div class="teamNm">{{items.teamshortNmA}}</div>
+            <div class="avgResult">{{items.awayRank}}</div>
+        </ion-col>
+
+    </ion-row>
+
+      <ion-card>
+        <ion-card-title>팀 통계</ion-card-title>
+        <ion-card-content>
+
+          <ion-row *ngFor="let items of nextMatchList">
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">경기당 평균 승점</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.pointGameH}}</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.pointGameHPer+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.pointGameLPer+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.pointGameL}}</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">승률</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.winsH}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.winsH+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.winsL+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.winsL}}%</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">패배확률</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.defeatsH}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.defeatsH+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.defeatsL+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.defeatsL}}%</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">비길확률</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.drawH}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.drawH+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.drawL+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.drawL}}%</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">경기당 평균 득점</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.scoredGameH}}</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.scoredGameHPer+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.scoredGameLPer+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.scoredGameL}}</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">경기당 평균 실점</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.concededGameH}}</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.concededGameHPer+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.concededGameLPer+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.concededGameL}}</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">경기당 평균 실점</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.totalGoalH}}</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.totalGoalHPer+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.totalGoalLPer+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.totalGoalL}}</div>
+            </ion-col>
+
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">득실 > 2.5</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.over25H}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.over25H+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.over25L+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.over25L}}%</div>
+            </ion-col>
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">득실 > 3.5</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.over35H}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.over35H+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.over35L+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.over35L}}%</div>
+            </ion-col>
+
+
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+              <div class="avgTitle">양팀 득점확률</div>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="teamAvgVal">{{items.bothGoalH}}%</div>
+            </ion-col>
+            <ion-col col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding>
+              <ion-row class="progressContent">
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding class="progressItemLeftDiv">
+                  <div class="progressItemLeft" [ngStyle]="{'width': items.bothGoalH+'%'}"></div>
+                </ion-col>
+                <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                  <div class="progressItemRight" [ngStyle]="{'width': items.bothGoalL+'%'}"></div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+              <div class="leagueAvgVal"> {{items.bothGoalL}}%</div>
+            </ion-col>
+
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+          <ion-card-title>경기 결과</ion-card-title>
+          <ion-card-content>
+            <ion-row class="matchCompare-div" *ngFor="let items of matchCompareInfoList">
+              <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding>
+                <div class="matchDate">{{items.matchDateKor}}</div>
+              </ion-col>
+              <ion-col col-5 col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 no-padding>
+                <ion-row>
+                  <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding></ion-col>
+                  <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding>
+                    <div class="teamNm">{{items.homeShortNm}}</div>
+                  </ion-col>
+                  <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding><img src="{{items.homeTeamImg2}}" />
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding>
+                <div class="scoreResult">{{items.homeScore}} - {{items.awayScore}} </div>
+              </ion-col>
+              <ion-col col-5 col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 no-padding>
+                <ion-row>
+                  <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding><img src="{{items.awayTeamImg2}}" />
+                  </ion-col>
+                  <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding>
+                    <div class="teamNm">{{items.awayShortNm}}</div>
+                  </ion-col>
+                  <ion-col col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-title>최근 5경기 정보</ion-card-title>
+          <ion-card-content>
+            <ion-row class="recentMatch-div">
+              <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                <ion-row *ngFor="let items of getHomeRecentHistory">
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div>{{items.homeScore}} - {{items.awayScore}} </div>
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <img src="{{items.homeTeamImg2}}" />
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div>{{items.ground}}</div>
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div class="matchResult">{{items.result}}</div>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding>
+                <ion-row *ngFor="let items of getAwayRecentHistory">
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div class="matchResult">{{items.result}}</div>
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div>{{items.ground}}</div>
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <img src="{{items.homeTeamImg2}}" />
+                  </ion-col>
+                  <ion-col col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding>
+                    <div>{{items.homeScore}} - {{items.awayScore}} </div>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+
+
+      </ion-grid>
+
+</ion-content>

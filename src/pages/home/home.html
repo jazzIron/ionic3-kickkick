@@ -1,0 +1,94 @@
+<ion-content no-padding class="page-header">
+  <ion-grid ion-fixed>
+    <ion-row class="header-title">
+      <ion-item no-lines>
+        <span>Premier League</span><br>
+        <span>프리미어리그</span>
+      </ion-item>
+    </ion-row>
+    <ion-row class="header-tab">
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        순위
+      </ion-col>
+      <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding>
+        구단
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        경기
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        승
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        무
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        패
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        득
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        실
+      </ion-col>
+      <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+        승점
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-content no-padding class="rankList-div">
+  <ion-grid>
+    <ion-row>
+      <ion-item class="rankList-item"  no-padding no-lines>
+        <ion-row class="rankList-content" *ngFor="let items of teamRankInfoList"
+          [ngClass]='{"topBackground" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.rank}}</span>
+          </ion-col>
+          <ion-col col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding class="teamImg-div" (click)="detailTeam(items.teamId)">
+            <img src ="{{items.teamImg2}}">
+            <span class="teamNm"
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.teamName}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.matchCnt}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span class="topWin">{{items.win}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span class="topDraw">{{items.draw}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span class="topLose">{{items.lose}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.goalPoint}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.losePoint}}</span>
+          </ion-col>
+          <ion-col col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 no-padding>
+            <span
+              [ngClass]='{"topRank" : (items.rank === 1 ||items.rank === 2 ||items.rank === 3 || items.rank === 4 || items.rank === 5)}'>{{items.grade}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </ion-row>
+
+
+
+
+
+
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,63 @@
+page-home {
+    @include backgroundSet();
+
+    .rankList-div {
+        margin-top:100px;
+
+        img {
+            height: 20px;
+            position: relative;
+            top: 5px;
+        }
+
+        .teamImg-div{
+          text-align: left !important;
+          padding-left: 10px;
+          cursor: pointer;
+        }
+        .scroll-content{
+            margin-bottom: 150px !important;
+        }
+
+        .rankList-item{
+            padding: 4px 10px 4px 10px;
+        }
+
+        .topBackground {
+            background-color: #fff !important;
+        }
+        .rankList-content {
+            width: 100%;
+            background-color: rgba( 55, 9, 59, 0.9 );
+            height: 48px;
+            border-radius: 5px;
+            margin: 8px 0px;
+            display: table;
+            span {
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+            }
+            ion-col {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .teamNm {
+                font-size: 14px;
+            }
+            .topRank {
+                color: #37093b;
+            }
+            .topWin {
+                color: #1e88f2;
+            }
+            .topDraw {
+                color: #37c149;
+            }
+            .topLose {
+                color: #fd4440;
+            }
+        }
+    }
+}

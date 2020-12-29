@@ -1,0 +1,73 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.grid {
+    padding: 0px;
+}
+
+.item-ios.item-block .item-inner,
+.item-md.item-block .item-inner {
+    padding: 0px;
+}
+
+.label-ios,
+.label-md {
+    margin: 0px;
+}
+
+@mixin backgroundSet() {
+    background-color: #3d195b;
+    background: #3d195b url("../../assets/images/league/premierLogo.png");
+    -webkit-background-size: 47% 34%;
+    -moz-background-size: 47% 34%;
+    -o-background-size: 47% 34%;
+    background-size: 47% 34%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    .item-md,
+    .item-ios {
+        background-color: transparent !important;
+    }
+    .content-ios,
+    .content-md {
+        background-color: transparent !important;
+    }
+    .page-header {
+        .header-title {
+            ion-item {
+                text-align: right;
+                padding: 16px 30px 16px 0px;
+                span:first-child {
+                    opacity: 0.8;
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+                span:last-child {
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #ffffff;
+                }
+            }
+        }
+        .header-tab {
+            height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            color: #ffffff;
+            padding: 0px 10px;
+        }
+    }
+}

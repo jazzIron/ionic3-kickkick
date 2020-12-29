@@ -1,0 +1,177 @@
+page-team-compare {
+  .compare-div {
+
+    ion-card img {
+      display: unset !important;
+      width: unset !important;
+    }
+
+    .card-content-ios, .card-content-md {
+      padding: 16px 5px;
+      font-size: 1.4rem;
+      line-height: 1.5;
+  }
+
+  .card-title-ios, .card-title-md{
+      font-family: 'NanumSquareB';
+      font-size: 1.7rem;
+      padding: 8px;
+      text-align: center;
+      background: #f4f4f4;
+      margin: 0px !important;
+  }
+
+
+  .teamInfo-div{
+    text-align: center;
+
+    .teamInfo{
+      padding: 15px 0px !important;
+    }
+
+    .matchRound-div{
+      background: #3d175c;
+      color: #fff;
+      font-size: 27px;
+      font-weight: bold;
+      height: 42px;
+      padding-top: 7px;
+    }
+
+    img{
+      height: 70px;
+    }
+
+    .matchData-div{
+      text-align: left;
+      padding: 3px 15px;
+      background: #f8f8f8;
+    }
+
+    .matchGround-div{
+      text-align: left;
+      padding: 2px 15px;
+      background: #f8f8f8;
+    }
+
+    .teamNm{
+      font-weight: bold;
+      font-size: 15px;
+      padding: 5px 0px;
+      color:#fff;
+    }
+
+    .avgResult{
+      font-size: 12px;
+      padding: 5px 0px;
+      color:#fff;
+    }
+
+
+
+  }
+
+    .avgTitle {
+        height: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: #4a4a4a;
+    }
+    .teamAvgVal {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #ef0107;
+        position: relative;
+        top: -7px;
+    }
+    .leagueAvgVal {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #3d175c;
+        position: relative;
+        top: -7px;
+    }
+    .progressItemLeftDiv {
+        transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+    }
+    .progressContent {
+        height: 8px;
+        border-radius: 100px;
+        background-color: #eaeaea;
+    }
+    .progressItemLeft {
+        height: 8px;
+        width: 50%;
+        border-radius: 0px 100px 100px 0px;
+        background-color: #ef0107;
+    }
+    .progressItemRight {
+        height: 8px;
+        width: 80%;
+        border-radius: 0px 100px 100px 0px;
+        background-color: #3d175c;
+    }
+  }
+
+  .recentMatch-div{
+    font-size: 14px;
+    line-height: 2;
+    font-family: 'NanumSquareB';
+    color: #000000;
+    text-align: center;
+
+    img{
+      height: 30px;
+    }
+
+    .matchResult{
+      font-size: 14px;
+      font-family: 'NanumSquareB';
+      color: #000;
+      line-height: 2;
+    }
+
+  }
+
+  .matchCompare-div{
+
+    text-align: center;
+    padding: 8px 0px;
+    border-bottom: 1px solid #f4f4f4;
+
+    .matchDate{
+      font-size: 16px;
+      font-family: 'NanumSquareB';
+      color: #000000;
+      padding-bottom: 8px;
+    }
+
+    .teamNm{
+      font-size: 16px;
+      color: #000000;
+      line-height: 2;
+    }
+
+    .scoreResult{
+      font-size: 14px;
+      font-family: 'NanumSquareB';
+      color: #ffffff;
+      line-height: 2;
+      background: #3d195b;
+    }
+
+    img{
+      height: 30px;
+    }
+
+
+  }
+
+}

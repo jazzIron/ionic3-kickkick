@@ -1,0 +1,58 @@
+page-tabs {
+    .ion-ios-rankIcon-outline,
+    .ion-ios-rankIcon,
+    .ion-md-rankIcon,
+    .ion-md-rankIcon-outline {
+        content: url('../../assets/images/icon/icon_rank.png');
+    }
+
+    .ion-ios-matchIcon-outline,
+    .ion-ios-matchIcon,
+    .ion-md-matchIcon,
+    .ion-md-matchIcon-outline {
+        content: url('../../assets/images/icon/icon_match.png');
+    }
+
+    .ion-ios-teamIcon-outline,
+    .ion-ios-teamIcon,
+    .ion-md-teamIcon,
+    .ion-md-teamIcon-outline {
+        content: url('../../assets/images/icon/icon_team.png');
+    }
+
+    .ion-ios-noticeIcon-outline,
+    .ion-ios-noticeIcon,
+    .ion-md-noticeIcon,
+    .ion-md-noticeIcon-outline {
+        content: url('../../assets/images/icon/icon_notice.png');
+    }
+
+    .tabs-ios .tab-button, .tabs-md .tab-button {
+        cursor: pointer;
+        min-height: 49px !important;
+    }
+
+    .tabs-md .tab-button[aria-selected=true] ,
+    .tabs-ios .tab-button[aria-selected=true] {
+        background: #dedede;
+        color: #fff;
+        border-top: 1px #2afd8a solid;
+        .tab-button-text{
+            display: none;
+        }
+    }
+
+    .tabs-md .tab-button-icon, .tabs-ios .tab-button-icon{
+        height: 30px;
+    }
+
+    .tabs-ios .tabbar {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        border-top: 0px solid !important;
+        background: #f8f8f8;
+    }
+
+}
